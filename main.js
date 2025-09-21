@@ -36,12 +36,12 @@ const updateTotalPrice = () => {
     let totalPrice = 0;
     document.querySelectorAll('.item').forEach(item => {
         // console.log(item);
-        const price = parseFloat(item.querySelector('.item-total').innerText.replace('$','')).toFixed(2);
+        const price = parseFloat(item.querySelector('.item-total').innerText.replace('$',''));
         
         totalPrice += price;
-        cartTotal.textContent = totalPrice;
     })
-    // console.log(totalPrice)
+    cartTotal.textContent = `${totalPrice.toFixed(2)}`;
+    console.log(totalPrice)
 }
 
 const addToCart = (item) => {
